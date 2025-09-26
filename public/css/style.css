@@ -1,0 +1,213 @@
+/* public/css/style.css */
+
+/* Estilos generales - Tailwind ya los maneja en el HTML (font-sans, bg-gray-100, etc.) */
+body {
+    min-height: 100vh; /* Ensure body takes full viewport height for sticky footer */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cuadro de mensajes */
+.message-box {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f0f0f0;
+    padding: 15px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    font-weight: bold;
+    text-align: center;
+    min-width: 250px;
+}
+
+.message-box.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.message-box.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message-box.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Spinner de carga */
+.spinner-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.spinner-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.spinner {
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #3498db;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.spinner-container span {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Estilos de utilidad */
+.hidden {
+    display: none !important;
+}
+
+/* Estilos específicos para un elemento del carrito (ej. un ítem individual) */
+/* Estos se cargarán dinámicamente con JavaScript, por lo que su estilo debe ser aquí */
+/* Tailwind classes will handle most of this, but here's a template for cart items */
+.cart-item {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+}
+
+/* Example of how a cart item's elements might look - adjust based on your cart.js output */
+.cart-item-info {
+    flex-basis: 100%; /* Default to full width on small screens */
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.cart-item-info h4 {
+    color: #007bff;
+    font-size: 1.125rem; /* ~18px */
+    font-weight: bold;
+    margin: 0;
+}
+
+.cart-item-info p {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0;
+}
+
+.quantity-control {
+    display: flex;
+    justify-content: center; /* Center on small screens */
+    align-items: center;
+    gap: 0.5rem; /* ~8px */
+    flex-basis: 100%; /* Full width on small screens */
+    margin-top: 0.5rem;
+}
+
+.quantity-control button {
+    padding: 0.3125rem 0.625rem; /* ~5px 10px */
+    font-size: 1em;
+    width: 2rem; /* 32px */
+    height: 2rem; /* 32px */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.quantity-control button:hover {
+    background-color: #e0e0e0;
+}
+
+.item-quantity-input {
+    width: 3rem; /* 48px */
+    text-align: center;
+    padding: 0.3125rem;
+    border: 1px solid #ddd;
+    border-radius: 0.25rem;
+    font-size: 1em;
+}
+
+.remove-from-cart-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 0.75rem; /* ~8px 12px */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    flex-basis: 100%; /* Full width on small screens */
+    margin-top: 0.5rem;
+    font-size: 0.9em;
+}
+
+.remove-from-cart-btn:hover {
+    background-color: #c82333;
+}
+
+/* Media Queries for cart item layout */
+@media (min-width: 640px) { /* Tailwind's 'sm' breakpoint */
+    .cart-item-info {
+        flex-basis: 40%; /* More space on small screens */
+        margin-bottom: 0;
+    }
+    .quantity-control {
+        flex-basis: 30%;
+        justify-content: flex-start;
+        margin-top: 0;
+    }
+    .remove-from-cart-btn {
+        flex-basis: 20%;
+        margin-top: 0;
+        text-align: right;
+    }
+}
+
+@media (min-width: 768px) { /* Tailwind's 'md' breakpoint */
+    .cart-item-info {
+        flex-basis: 30%; /* More space on desktop */
+    }
+    .quantity-control {
+        flex-basis: 25%;
+    }
+    .remove-from-cart-btn {
+        flex-basis: 15%;
+    }
+}

@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  .logo img {
+    height: 60px;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+  }
+  
+  nav a.activo {
+    color: red;
+  }
+  
+  .login-btn {
+    background: black;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  .imagen-central {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* conserva el alto que ya definiste */
+  background-color: #f4f4f4;
+  padding: 0; /* elimina el padding lateral */
+  margin: 0;   /* elimina cualquier margen */
+  width: 100vw; /* fuerza el ancho completo de la ventana */
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.25);
+}
+
+.slider-track {
+  display: flex;
+  width: 100%; /* 100% por cada imagen */
+  height: 100%;
+  animation: slide 15s infinite;
+}
+
+.slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0%); }
+  33% { transform: translateX(-100%); }
+  66% { transform: translateX(-200%); }
+  100% { transform: translateX(0%); }
+}
+  
+  footer {
+    background: white;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .redes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 24px;
+  }

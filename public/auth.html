@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los ALMEYDAS - Autenticación</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-inter">
+
+
+    <div class="bg-white p-8 rounded-lg shadow-md max-w-lg w-full">
+
+	<a id="auth-nav-link" href="/main.html" 
+	   class="text-black text-4xl transition duration-300 ease-in-out transform hover:scale-110">
+	  ←
+	</a>
+    
+	<div class="logo">
+	  <img src="Imagenes/logo.jpeg" alt="Logo" class="w-1/2 h-auto mx-auto">
+	</div>
+
+        <h1 class="text-3xl font-bold text-gray-800 text-center mb-6">🔐 Autenticación</h1>
+
+        <div class="flex border-b border-gray-200 mb-6">
+		<button id="register-tab" 
+		    class="flex-1 py-3 text-center text-lg font-medium text-red-600 hover:text-black border-b-2 border-transparent hover:border-black focus:text-black focus:border-black transition duration-300 ease-in-out focus:outline-none rounded-t-lg">
+		  Registrarse
+		</button>
+
+		<button id="login-tab" 
+		    class="flex-1 py-3 text-center text-lg font-medium text-red-600 hover:text-black border-b-2 border-transparent hover:border-black focus:text-black focus:border-black transition duration-300 ease-in-out focus:outline-none rounded-t-lg">
+		  Iniciar Sesión
+		</button>
+
+
+        </div>
+
+        <div id="message-box" class="message-box"></div>
+        <div id="loading-spinner" class="spinner-container">
+            <div class="spinner"></div>
+            <span>Cargando...</span>
+        </div>
+
+        <div id="register-form-container" class="tab-content">
+            <form id="register-form" class="space-y-4">
+                <div>
+                    <label for="register-username" class="block text-red-700 text-sm font-sans-serif mb-2">Nombre de Usuario:</label>
+                    <input type="text" id="register-username" name="nombre_usuario" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-black-500 focus:border-black-500" required>
+                </div>
+                <div>
+                    <label for="register-email" class="block text-red-700 text-sm font-sans-serif mb-2">Correo:</label>
+                    <input type="email" id="register-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-black-500 focus:border-black-500" required>
+                </div>
+                <div>
+                    <label for="register-password" class="block text-red-700 text-sm font-sans-serif mb-2">Contraseña:</label>
+                    <input type="password" id="register-password" name="contrasena" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-black-500 focus:border-black-500" required>
+                </div>
+                <div>
+                    <label for="register-rol" class="block text-red-700 text-sm font-sans-serif mb-2">Rol (opcional, por defecto 'cliente'):</label>
+                    <select id="register-rol" name="rol" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-black-500 focus:border-black-500">
+                        <option value="cliente">Cliente</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+                </div>
+		<button type="submit" class="w-full bg-black hover:bg-gray-800 text-white font-sans-serif py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+		  Registrarse
+		</button>
+       
+
+            </form>
+        </div>
+
+        <div id="login-form-container" class="tab-content hidden">
+            <form id="login-form" class="space-y-4">
+                <div>
+                    <label for="login-email" class="block text-red-700 text-sm font-sans-serif mb-2">Correo:</label>
+                    <input type="email" id="login-email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" required>
+                </div>
+                <div>
+                    <label for="login-password" class="block text-red-700 text-sm font-sans-serif mb-2">Contraseña:</label>
+                    <input type="password" id="login-password" name="contrasena" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-green-500 focus:border-green-500" required>
+                </div>
+		<button type="submit" class="w-full bg-black hover:bg-green-700 text-white font-sans-serif py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+		  Iniciar Sesión
+		</button>	
+            </form>
+            
+		<button type="submit" class="w-full mt-4">
+		  <a id="auth-nav-link" href="/auth.html" class="w-full hover:bg-grey-700 text-red-600 font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+		    <u>Olvidaste tu contraseña</u>
+		  </a>
+		</button>
+
+                
+		<button type="submit" class="w-full mt-4">
+		  <a id="auth-nav-link" href="/auth.html" class="w-full hover:bg-grey-700 text-red-600 font-sans-serif py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">
+		    <u>No tiene cuenta?</u>
+		  </a>
+		</button>
+
+        </div>
+    </div>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

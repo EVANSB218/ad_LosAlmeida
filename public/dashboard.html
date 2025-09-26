@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Producto - Los_ALMEYDAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+    
+    <header class="bg-white shadow-md p-4 flex flex-col sm:flex-row items-center justify-between rounded-b-lg">
+        <div class="flex-shrink-0 mb-4 sm:mb-0">
+            <img src="Imagenes/logo.jpeg" alt="Logo" class="h-16">
+        </div>
+
+        <nav class="flex flex-col sm:flex-row flex-grow justify-center sm:space-x-6 space-y-2 sm:space-y-0 w-full sm:w-auto font-sans">
+            <a href="/main.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black text-center">
+                Bienvenidos
+            </a>
+            <a href="/index.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black text-center">
+                Productos
+            </a>
+            <a href="/index.html" class="bg-gray-200 shadow-md text-black py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black text-center">
+                Gestión de Productos
+            </a>
+        </nav>
+
+        <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-0">
+            <button id="logout-button" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black hidden w-full sm:w-auto text-center">
+                Cerrar Sesión
+            </button>
+            <button class="login-btn" onclick="location.href='/auth.html'">
+                <img src="/imag/icons8_usuario_32.png" alt="Login" class="w-6 h-6">
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4 flex-grow">
+        <div id="message-box" class="message-box"></div>
+        <div id="loading-spinner" class="spinner-container">
+            <div class="spinner"></div>
+            <span>Registrando producto...</span>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto w-full">
+            <h2 class="text-2xl font-semibold text-red-900 mb-6 text-center">Formulario de Producto</h2>
+            <form id="product-form" class="space-y-4">
+                <div>
+                    <label for="product-name" class="block text-red-800 text-sm font-semibold mb-2">Nombre del Producto:</label>
+                    <input type="text" id="product-name" name="nombre" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div>
+                    <label for="product-description" class="block text-red-800 text-sm font-semibold mb-2">Descripción:</label>
+                    <textarea id="product-description" name="descripcion" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+                </div>
+                <div>
+                    <label for="product-price" class="block text-red-800 text-sm font-semibold mb-2">Precio:</label>
+                    <input type="number" id="product-price" name="precio" step="0.01" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div>
+                    <label for="product-stock" class="block text-red-800 text-sm font-semibold mb-2">Stock:</label>
+                    <input type="number" id="product-stock" name="stock" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div>
+                    <label for="product-image-url" class="block text-red-800 text-sm font-semibold mb-2">URL de la Imagen:</label>
+                    <input type="url" id="product-image-url" name="imagen_url" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" placeholder="Ej: https://ejemplo.com/imagen.jpg">
+                </div>
+                <div>
+                    <label for="product-category" class="block text-red-800 text-sm font-semibold mb-2">Categoría:</label>
+                    <select id="product-category" name="id_categoria" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        </select>
+                </div>
+                <button type="submit" class="w-full bg-black hover:bg-green-800 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 shadow-md">
+                    Registrar Producto
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-4 text-center mt-8 rounded-t-lg">
+        <p>&copy; 2025 Los ALMEYDAS. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

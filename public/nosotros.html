@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Los ALMEYDAS - Carniceria</title>
+      <script src="https://cdn.tailwindcss.com"></script>
+   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="css/nosotros.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Iconos de redes (usaremos Font Awesome CDN) -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+<header class="bg-white shadow-md py-4 px-6 rounded-b-lg">
+    <div class="flex-shrink-0">
+      <img src="Imagenes/logo.jpeg" alt="Logo" class="h-16">
+    </div>
+  <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+
+    <!-- Logo a la izquierda -->
+
+
+    <!-- Navegación centrada -->
+    <nav class="flex flex-wrap justify-center items-center gap-4 text-center font-sans-serif mx-auto">
+      <a href="/main.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:bg-gray-300 hover:text-black">
+        Bienvenidos
+      </a>
+      <a href="/index.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:bg-gray-300 hover:text-black">
+        Productos
+      </a>
+      <a href="/nosotros.html" class="bg-gray-200 shadow-md text-black-600 py-2 px-4 rounded-lg transition duration-300 hover:scale-105 hover:bg-gray-300 hover:text-black">
+        Nosotros
+      </a>
+
+      <a id="admin-link" href="/dashboard.html" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg transition duration-300 hover:scale-105 shadow-md hidden">
+        Gestión de Productos
+      </a>
+      <button id="logout-button" class="bg-red-500 hover:bg-red-600 text-white py-2 px-4 rounded-lg transition duration-300 hover:scale-105 shadow-md hidden">
+        Cerrar Sesión
+      </button>
+      
+    </nav>
+    
+  </div>
+        <button onclick="location.href='/auth.html'" style="background: none; border: none; cursor: pointer;">
+        <img src="/imag/icons8_usuario_32.png" alt="Login" style="width: 28px; height: 28px;">
+      </button>
+</header>
+
+
+
+  <main class="contenido">
+    <div class="info-nosotros">
+      <img src="Imagenes/nosotros.jpeg" alt="Vaca Brahman">
+      <div class="texto">
+        <h1>Los Almeyda</h1>
+        <h3>Carnicería</h3>
+        <p>
+          Con más de 40 años de trayectoria en la zona de comercialización de carnes, vísceras, embutidos y otros productos con relación a los cárnicos en Floridablanca y todos sus alrededores.
+        </p>
+      </div>
+    </div>
+  </main>
+
+
+
+<footer class="bg-gray-100 p-4">
+  <div class="flex justify-center items-center space-x-8">
+    <!-- Facebook -->
+    <a href="https://facebook.com" target="_blank" class="text-2xl text-blue-600 hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-facebook"></i>
+    </a>
+
+    <!-- Instagram -->
+    <a href="https://instagram.com" target="_blank" class="text-2xl text-pink-500 hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-instagram"></i>
+    </a>
+
+    <!-- YouTube -->
+    <a href="https://youtube.com" target="_blank" class="text-2xl text-red-600 hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-youtube"></i>
+    </a>
+
+    <!-- X (Twitter) -->
+    <a href="https://twitter.com" target="_blank" class="text-2xl text-black hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-x-twitter"></i>
+    </a>
+
+    <!-- GitHub -->
+    <a href="https://github.com/elga21/ad_LosAlmeida" target="_blank" class="text-2xl text-gray-800 hover:scale-110 transition-transform duration-300">
+      <i class="fab fa-github"></i>
+    </a>
+        <a href="https://www.ibero.edu.co/" target="_blank" class="hover:scale-110 transition-transform duration-300">
+      <img src="imag/IBERO_logo.png" alt="Iberoamericana" class="h-8">
+
+    </a>
+  </div>
+</footer>
+
+
+
+</body>
+</html>

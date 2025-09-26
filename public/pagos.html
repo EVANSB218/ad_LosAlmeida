@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - Los_ALMEYDAS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col font-inter">
+    
+  
+   <header class="bg-white shadow-md p-4 flex items-center rounded-b-lg">
+  <!-- Logo a la izquierda sin espacio -->
+  <div class="flex-shrink-0">
+    <img src="Imagenes/logo.jpeg" alt="Logo" class="h-16">
+  </div>
+
+  <!-- Contenedor central para los enlaces, que se expande y centra -->
+  <nav class="flex flex-grow justify-center space-x-8 font-sans">
+    <a href="/index.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black">
+      Seguir Comprando
+    </a>
+
+    <a href="/nosotros.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black">
+      Nosotros
+    </a>
+
+    <a id="admin-link" href="/dashboard.html" class="bg-transparent text-red-600 py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black hidden">
+      Inventario
+    </a>
+
+    <a href="/cart.html" class="bg-gray-200 shadow-md text-black py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black">
+      Procesar pago
+    </a>
+
+    <button id="logout-button" class="bg-transparent hover:bg-gray-400 text-red-600 py-2 px-4 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 hover:shadow-md hover:bg-gray-300 hover:text-black">
+      Cerrar Sesión
+    </button>
+  </nav>
+
+  <!-- Icono de usuario a la derecha sin espacio -->
+  <button class="login-btn flex-shrink-0" onclick="location.href='/auth.html'" style="background: none; border: none; cursor: pointer;">
+    <img src="/imag/icons8_usuario_32.png" alt="Login" style="width: 24px; height: 24px;">
+  </button>
+</header>
+
+    
+   
+<div class="icon-box" style="max-width:400px; margin:40px auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.1); font-family:Arial, sans-serif;">
+                    
+<button id="checkout-button" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 ease-in-out transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed shadow-md">
+  <a href="mailto:" class="block w-full text-center">
+    📄 Procesado, verifique su correo y compruebe el estado de su pedido
+  </a>
+</button>
+
+    
+</div>
+
+
+
+    <script src="/js/cart.js"></script>
+</body>
+</html>
