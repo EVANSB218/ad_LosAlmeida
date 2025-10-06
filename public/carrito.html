@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Los Almeydas - Tu Carrito</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Estilos específicos para el carrito (pueden moverse a style.css si lo prefieres) */
+        .cart-container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .cart-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            display: flex;
+            flex-wrap: wrap; /* Permite que los elementos se envuelvan */
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        .cart-item h4 {
+            color: #007bff;
+            margin: 0;
+            flex-basis: 100%; /* Ocupa todo el ancho en móviles */
+            text-align: left;
+        }
+        .cart-item p {
+            margin: 5px 0;
+            font-size: 0.9em;
+            flex-basis: 50%; /* Media pantalla en desktop */
+            text-align: left;
+        }
+        .cart-item .quantity-control,
+        .cart-item .remove-from-cart-btn {
+            flex-basis: 100%; /* Ocupan todo el ancho en móviles */
+            margin-top: 10px;
+            text-align: center;
+        }
+        .quantity-control {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+        .quantity-control button {
+            padding: 5px 10px;
+            font-size: 1em;
+            width: 30px; /* Tamaño fijo para botones */
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .item-quantity-input {
+            width: 60px;
+            text-align: center;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+        .remove-from-cart-btn {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .remove-from-cart-btn:hover {
+            background-color: #c82333;
+        }
+        .cart-summary {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+        .cart-actions {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .cart-actions button {
+            margin: 0 10px;
+        }
+
+        /* Ajustes responsivos */
+        @media (min-width: 768px) {
+            .cart-item h4 {
+                flex-basis: 30%; /* Más espacio en desktop */
+            }
+            .cart-item p {
+                flex-basis: 20%;
+            }
+            .cart-item .quantity-control {
+                flex-basis: 20%;
+                justify-content: flex-start;
+            }
+            .cart-item .remove-from-cart-btn {
+                flex-basis: 15%;
+                margin-top: 0;
+                text-align: right;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <h1>Tu Carrito de Compras</h1>
+        <nav>
+            <a href="/" class="admin-link">Volver a Productos</a>
+        </nav>
+    </header>
+
+    <div class="container cart-container">
+        <div id="cartItems">
+            <p>Cargando carrito...</p>
+        </div>
+        <div class="cart-summary">
+            Total del Carrito: <span id="cartTotal">$0.00</span>
+        </div>
+        <div class="cart-actions">
+            <button id="clearCartButton">Vaciar Carrito</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Lógica adicional para el botón de vaciar carrito
+        document.getElementById('clearCartButton').addEventListener('click', () => {
+            if (confirm('¿Estás seguro de que quieres vaciar el carrito?')) {
+                cart = []; // Vaciar el array del carrito
+                sessionStorage.setItem('cart', JSON.stringify(cart)); // Actualizar sessionStorage
+                updateCartDisplay(); // Actualizar la vista
+                alert('El carrito ha sido vaciado.');
+            }
+        });
+
+        // Opcional: Lógica para el botón de pago (requeriría más backend)
+        // document.getElementById('checkoutButton').addEventListener('click', () => {
+        //     alert('Funcionalidad de pago aún no implementada.');
+        // });
+    </script>
+</body>
+</html>
